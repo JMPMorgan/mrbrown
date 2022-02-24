@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Flama';
+    src: url('Fonts/Flama-Basic.otf') format('otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Flama';
+    src: url('Fonts/Flama-Black.otf') format('otf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Flama';
+    src: url('Fonts/Flama.otf') format('otf');
+    font-weight: 200;
+}
+
+@font-face{
+    font-family:'organetto';
+    src: local('organetto'),
+    local('organetto-regular'),
+    local('Organetto-thin'),
+    url('Fonts/organetto-regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: 'organetto';
+    src: local('organetto'),
+    local('organetto-regular'),
+    local('Organetto-thin'),
+     url('Fonts/organetto-thin.otf') format('opentype');
+    font-weight: 200;
+}
+@font-face{
+    font-family: 'organetto';
+    src: local('organetto'),
+    local('organetto-regular'),
+    local('Organetto-bold'),
+     url('Fonts/organetto-bold.otf') format('opentype');
+    font-weight: 700;
+}
+
+
+*,body{
+    font-family: 'organetto',Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+.sections{
+    color:#F5D200;
+}
+
+.sections:hover{
+    text-decoration: underline;
+    opacity: 0.75 ;
+}
+
+.bg-dark{
+    background-color: #000 !important;
+}
+#logo{
+    width: 150px;
+}
+
+.icons{
+    color: #F5D200;
+}
+
+a{
+    color: #F5D200;
+
+}
+
+a:hover{
+    color: #F5D200;
+    text-decoration: none;
+}
+
+nav{
+    position: absolute !important;
+    width: 100% !important;
+    z-index: 100;
+}
+
+.food-image{
+    height: 937px;
+    width: 100% ;
+    overflow-y: hidden !important;
+}
+
+.carousel-inner,.carousel-item {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
