@@ -1,0 +1,127 @@
+@font-face {
+    font-family: 'Flama';
+    src: url('Fonts/Flama-Basic.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Flama';
+    src: url('Fonts/Flama-Black.otf') format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Flama';
+    src: url('Fonts/Flama.otf') format('opentype');
+    font-weight: 200;
+}
+@font-face{
+    font-family:'organetto';
+    src: local('organetto'),
+    local('organetto-regular'),
+    local('Organetto-thin'),
+    url('Fonts/organetto-regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: 'organetto';
+    src: local('organetto'),
+    local('organetto-regular'),
+    local('Organetto-thin'),
+     url('Fonts/organetto-thin.otf') format('opentype');
+    font-weight: 200;
+}
+@font-face{
+    font-family: 'organetto';
+    src: local('organetto'),
+    local('organetto-regular'),
+    local('Organetto-bold'),
+     url('Fonts/organetto-bold.otf') format('opentype');
+    font-weight: 700;
+}
+
+*,body{
+
+}
+
+.container-menu{
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    padding-right: 15px ;
+    padding-left:15px ;
+    background-color: #fcfcfc !important;
+}
+
+.container-menu>h2{
+    font-family: 'Flama' ,Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.row{
+    font-family: 'Flama' ,Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.food-photos{
+    padding-left: 1rem;
+    width: 90%;
+
+}
+
+
+
+.menu_select{
+
+}
+
+.menu_select:hover{
+    border-radius: 10px;
+    background-color: #F5D200;
+    border: 2px solid black;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.add_food_btn:hover{
+
+}
+
+.col-6>.add_food_btn{
+    display: none;
+}
+
+.col-6:hover>.add_food_btn{
+    display:inline;
+    cursor: pointer;
+    color: #20c320;
+    font-size: xx-large;
+    position: absolute;
+    width: 98%;
+    height: 35px;
+    z-index: 100;
+    box-sizing: border-box;
+    bottom: 15px;
+    text-align: right;
+}
+ .col-6:hover{
+     cursor: pointer;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+ }
+
+.img-modal{
+    width: 250px;
+    height: 250px;
+}
+
+ .swal-buttons-menu{
+     max-width: fit-content;
+
+ }
+ #counter-order{
+     width: 80px;
+ }
+
+
+

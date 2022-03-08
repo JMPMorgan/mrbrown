@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/e500c13009.js" crossorigin="anonymous"></script>
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" href="../assets/styleNavbar.css">
+        <link rel="stylesheet" href="../assets/styleOrderMenu.css">
+        <script src="../helpers/navbar.js"></script>
+        <script src="../helpers/order-menu.js"></script>
+    </head>
+    <body>
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-2 justify-content-start">
+                    <div>
+                        <img src="../assets/Img/logo.png" id='logo'alt="" srcset="">
+                    </div>
+                </ul>
+                <ul class="navbar-nav ">
+                    <li class="nav-item mx-2 sections nav-bar-items" onmouseover='this.style.borderBottom="2px solid #F5D200"' onmouseleave="this.style.borderBottom='none'">
+                       <span >OUR FOOD</spanji8> 
+                    </li>
+                    <li class="nav-item mx-2 sections nav-bar-items">
+                        <span >DRINKS</span> 
+                    </li>
+                    <li class="nav-item mx-2 sections nav-bar-items">
+                        <span >WE ARE HERE</span> 
+                    </li>
+                    <li class="nav-item mx-2 sections nav-bar-items">
+                       <span>¿QUIÉN ES MR.BROW?</span> 
+                    </li>
+                    <li class="nav-item mx-2 sections nav-bar-items">
+                       <span>FRANQUICIAS</span> 
+                    </li>
+ 
+                </ul>
+                <ul class="navbar-nav ml-auto justify-content-end">
+                    <li class="nav-item mx-2 sections nav-bar-items" id="order-now">
+                        <span >ORDER NOW!</span>
+                    </li>
+                    <li class="nav-item mx-2 icons"><i class='bx bxl-facebook bx-sm'></i></li>
+                    <li class="nav-item mx-2 icons"><i class='bx bxl-instagram bx-sm' ></i></li>
+                </ul>
+            </div>
+        </nav> 
+        <div class="container-menu">
+            <div class="row">
+            <div class="col-2"><h2>MENU</h2></div>
+            <div class="col-10"style="padding:0;" ><H2>ORDER NOW!</H2></div></div>
+            <div class="row">
+                
+                <div class="col-2">
+                    <ul class="navbar-nav">
+                        <li class="nav-item my-2  " id="entradas">
+                            <span class="menu_select">ENTRADAS</span>
+                        </li>                       
+                        <li class="nav-item my-2 " id="wings">
+                            <span class="menu_select">WINGS & BONELESS</span>
+                        </li>
+                        <li class="nav-item my-2" id="baguettes">
+                            <span class="menu_select">BAGUETTES</span>
+                        </li>
+                        <li class="nav-item my-2 " id="pizzas">
+                            <span class="menu_select">PIZZAS</span>
+                        </li>
+                        <li class="nav-item my-2 " id="ensaladas">
+                            <span class="menu_select">ENSALADAS</span>
+                        </li>
+                        <li class="nav-item my-2 " id="hamburguesas">
+                            <span class="menu_select">HAMBURGUESAS</span>
+                        </li>
+                        <li class="nav-item my-2 " id="hamburguesas_hand">
+                            <span class="menu_select">HAMBURGUESAS HAND SIZE</span>
+                        </li>
+                        <li class="nav-item my-2 " id="postres">
+                            <span class="menu_select">POSTRES</span>
+                        </li>
+                        <li class="nav-item my-2 " id="kids">
+                            <span class="menu_select">KIDS WORLD</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-12" style="padding: 0;">
+                            <h3>ENTRADAS</h3>
+                            <div class="row">                               
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12" style="padding: 0;">
+                            <h3>WINGS & BONELESS</h3>
+                            <div class="row">                               
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12" style="padding: 0;">
+                            <h3>BAGUETTES</h3>
+                            <div class="row">                               
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12" style="padding: 0;">
+                            <h3>PIZZAS</h3>
+                            <div class="row">                               
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12" style="padding: 0;">
+                            <h3>ENSALADAS</h3>
+                            <div class="row ">                               
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12" style="padding: 0;">
+                            <h3>HAMBURGUESAS HAND SIZE</h3>
+                            <div class="row ">                               
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12" style="padding: 0;">
+                            <h3>POSTRES</h3>
+                            <div class="row ">                               
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12" style="padding: 0;">
+                            <h3>KIDS WORLD</h3>
+                            <div class="row ">                               
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="padding: 0;">
+                                    <div class="add_food_btn">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="row platillos">
+                                        <div class="col-3" style="padding:0;">
+                                            <img src="../assets/Img/Aros+de+Cebolla (1).jpeg" class="food-photos" alt="" srcset="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h1>Aros de Cebolla</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>     
+    </body>
+</html>
