@@ -97,3 +97,12 @@ nav{
     overflow-x: hidden;
 }
 
+#add-user{
+    font-size: x-large;
+    cursor: pointer;
+}
+#sign-up{
+    font-size: larger;
+    cursor: pointer;
+}
+

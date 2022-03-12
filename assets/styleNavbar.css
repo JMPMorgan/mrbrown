@@ -64,3 +64,12 @@
     width: 100% !important;
     z-index: 100;
 }
+
+#add-user{
+    cursor: pointer;
+    font-size: x-large;
+}
+#sign-up{
+    cursor: pointer;
+    font-size: larger;
+}

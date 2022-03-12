@@ -1,7 +1,14 @@
 $(()=>{
     $('#order-now').on('click',()=>{
         document.location='order-menu.html';
-    })
+    });
+
+    $('#btn-add-user').on('click',()=>{
+        document.location='adduser.html';
+    });
+
+    $('#btn-sign-up').on('click',()=>window.location='login.html')
+
 })
 
 window.onload=()=>{

@@ -1,0 +1,19 @@
+.container-login{
+    background-color: #fcfcfc;
+}
+.btn-primary{
+    background-color: #000000;
+    border-color: #000000;
+    color: #fcfcfc;
+}
+
+.btn-outline-primary{
+    border-color: #000000;
+    color: #000000;
+}
+
+.btn-primary:hover,.btn-outline-primary:hover{
+    background-color: #F5D200;
+    border-color: #F5D200;
+    color: #000000;
+}
