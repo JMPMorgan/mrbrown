@@ -24,17 +24,22 @@ $(()=>{
         }
         else{
             const user=$('#txt-user').val();
-            const pass=$('#txt-pass').val();
+            const password=$('#txt-pass').val();
             let response= await $.ajax({
                 method:'POST',
                 data:{
                     user,
-                    pass
+                    password
                 },
                 url:'../backend/login.php',
                 datatype:'JSON'
             });
             response=JSON.parse(response);
+            if(response.success===true){
+
+            }else if(response.success===false){
+                printErrors(response.error);
+            }
         }
     });
 })

@@ -12,6 +12,12 @@ const Toast = Swal.mixin({
 $(()=>{
     $('#btn-register').on('click',async()=>{
         let errors=[];
+        console.log($("#txt-name").val(),$('#txt-lastname').val());
+        console.log($('#txt-user').val(),$('#txt-email').val());
+        console.log($('#txt-password').val());
+        console.log($('#txt-cpassword').val());
+        //console.log($('#input[name=gender]:checked').val().length);
+        console.log($('input[name=gender]:checked').val());
         if(onlyLetters($("#txt-name").val())==false || $("#txt-name").val().length<=0){
             errors.push('El nombre solo acepta Letras y Espacios');
         }
@@ -31,6 +37,9 @@ $(()=>{
         if($('#txt-password').val()!==$('#txt-cpassword').val()){
             errors.push('La Contraseña y la confirmacion de la Contraseña no coinciden');
         }
+        if($('input[name=gender]:checked').val().length<=0){
+            errors.push('Debe selecionar un sexo');
+        }
         if(validatePhoneNumber($('#txt-tel').val())==false && $('#txt-tel').val().length<10){
             errors.push('El numero debe ser de longitud de 10 digitos');
         }
@@ -44,6 +53,7 @@ $(()=>{
             const email=$('#txt-email').val();
             const password= $('#txt-password').val();
             const phone=$('#txt-tel').val();
+            const gender = $('input[name=gender]:checked').val();
             let repsonse = await $.ajax({
                 method:'POST',
                 url:'../backend/adduser.php',
@@ -53,11 +63,19 @@ $(()=>{
                     user,
                     email,
                     password,
-                    phone
+                    phone,
+                    gender
                 },
                 datatype:'JSON'
             })
             repsonse=JSON.parse(repsonse);
+            console.log(repsonse);
+            if(repsonse.success===true){
+                window.location='index.html';
+            }
+            else if(repsonse.success===false){
+                printErrors(repsonse.error);
+            }
         }
     })
 })

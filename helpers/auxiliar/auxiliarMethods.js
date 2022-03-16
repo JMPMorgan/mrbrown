@@ -3,12 +3,12 @@ function onlyLetters(text){
     //si cumple las condiciones regresa true, pero en esta funcion regresa el opuesto
     //por cuestion de funcionalidad
     let regex = /^[a-zA-Z ]+$/;
-    return !regex.test(text);
+    return regex.test(text);
 }
 
 function onlyMinus(text){
     let regex = /^[a-z0-9\_\.]+$/;
-    return !regex.test(text);
+    return regex.test(text);
 }
 
 
@@ -23,7 +23,7 @@ function validateEmail(email){
     validad el email para que haya texto despues un arroba y un punto
     */
     let regex = /\S+@\S+\.\S+/;
-    return !regex.test(email);
+    return regex.test(email);
 }
 
 function validatePassword(password){
@@ -96,7 +96,7 @@ function validateEntirePassword(password){
 
 function validatePhoneNumber(number){
   const regex_number = /^[0-9]+$/;
-  return !regex_number.test(number);
+  return regex_number.test(number);
 }
 
 export {validateEntirePassword,onlyLetters,onlyMinus,validateEmail,validatePassword,validatePhoneNumber,getParameterByName};

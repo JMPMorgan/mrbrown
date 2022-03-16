@@ -19,7 +19,7 @@ class DBConnect{
         */ 
         try{
             $server='localhost';
-            $db='bd_noticiero';
+            $db='bd_brown';
             $user='root';
             $pass='';
             $this->DB = new PDO("mysql:host=$server; dbname=$db",$user,$pass);
