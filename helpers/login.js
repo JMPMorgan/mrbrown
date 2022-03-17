@@ -36,7 +36,7 @@ $(()=>{
             });
             response=JSON.parse(response);
             if(response.success===true){
-
+                window.location='index.html';
             }else if(response.success===false){
                 printErrors(response.error);
             }
