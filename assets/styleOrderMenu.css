@@ -123,5 +123,30 @@
      width: 80px;
  }
 
+ #shopping-cart{
+    z-index: 101;
+    display: flex;
+    position: fixed;
+    color: black;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 30px;
+    top: 90%;
+    right: 5%;
+    border: 2px black solid;
+    background-color: #20c320;
+ }
+
+
+#shopping-cart>#number-food{
+    color: black;
+    font-size: xx-large;
+    position: fixed;
+    margin-top: 14px;
+}
+
+#shopping-cart>i{
+    font-size: xx-large;
+}
 
 
