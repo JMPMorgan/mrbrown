@@ -149,4 +149,20 @@
     font-size: xx-large;
 }
 
+.swal2-confirm{
+    border: 0 !important;
+    border-radius: .25em !important;
+    background: initial !important;
+    background-color: #F5D200 !important;
+    color: black !important;
+    font-size: 1em !important;
+}
+
+.swal2-confirm:hover{
+    box-shadow: 0 0 10px #F5D200;
+}
+
+.swal2-confirm:focus{
+    box-shadow:  0 0 10px #F5D200 !important;
+}
 

@@ -1,0 +1,56 @@
+@font-face{
+    font-family:'organetto';
+    src: local('organetto'),
+    local('organetto-regular'),
+    local('Organetto-thin'),
+    url('Fonts/organetto-regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: 'organetto';
+    src: local('organetto'),
+    local('organetto-regular'),
+    local('Organetto-thin'),
+     url('Fonts/organetto-thin.otf') format('opentype');
+    font-weight: 200;
+}
+@font-face{
+    font-family: 'organetto';
+    src: local('organetto'),
+    local('organetto-regular'),
+    local('Organetto-bold'),
+     url('Fonts/organetto-bold.otf') format('opentype');
+    font-weight: 700;
+}
+
+.btn-primary{
+    background-color: #000000;
+    border-color: #000000;
+    color: #fcfcfc;
+}
+
+.btn-outline-primary{
+    border-color: #000000;
+    color: #000000;
+}
+
+.btn-primary:hover,.btn-outline-primary:hover{
+    background-color: #F5D200;
+    border-color: #F5D200;
+    color: #000000;
+}
+
+
+*,body{
+    font-family: 'organetto',Arial, Helvetica, sans-serif;
+}
+
+
+#lista-orden{
+    padding: 0 !important;
+}
+
+#map{
+    height: 480px;
+}

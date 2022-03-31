@@ -6,6 +6,17 @@ try{
     $sql='SELECT * FROM `food`;';
     $rows=selectQuery($sql);
     if(!empty($rows)){
+        if(isSessionCorrect()==true){
+            /*
+            Esto es para saber si el usuario esta con la sesion para despues 
+            ordenar comida
+            */
+            $result['logged']=true;
+        }
+        else{
+            $result['logged']=false;
+        }
+        
         array_push($result['info'],$rows);
         $result['success']=true;
         echo json_encode($result);

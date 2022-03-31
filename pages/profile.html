@@ -14,7 +14,10 @@
           crossorigin="anonymous"></script>
           <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
           <link rel="stylesheet" href="../assets/styleNavbar.css">
+          <link rel="stylesheet" href="../assets/styleProfile.css">
           <script src="../helpers/navbar.js"></script>
+          <script src="../helpers/profile.js"></script>
+
     </head>
     <body>
         <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -52,5 +55,33 @@
               </ul>
             </div>
           </nav>
+          <div class="container">
+            <div class="container mt-2">
+              <button id="btn-out" class="btn btn-primary">Cerrar Sesion</button>
+              <ul class="nav">
+                  <li class="nav-item nav-menu m-4" id="pedidos">
+                      <div class="m4">
+                          <p>Mis pedidos</p>
+                      </div>
+              
+                  </li>
+                  <li class="nav-item nav-menu m-4" id="perfil">
+                      <div>
+                          <p>Informacion del Perfil</p>
+                      </div>
+              
+                  </li>
+                  <li class="nav-item nav-menu m-4" id="pago">
+                      <div>
+                          <p>Informacion de Pago</p>
+                      </div>
+                  </li>
+              </ul>
+              <div id="container-iframe">
+  
+              </div>
+              
+        </div>
+          </div>
     </body>
 </html>

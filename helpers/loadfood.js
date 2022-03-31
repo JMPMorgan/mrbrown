@@ -1,3 +1,4 @@
+let l=false;
 $(async()=>{
     let response = await $.ajax({
         method:'GET',
@@ -6,6 +7,7 @@ $(async()=>{
     });
     response=JSON.parse(response);
     if(response.success===true){
+        l=response.logged===true ? true:false;
         printFood(response.info[0]);
     }else{
 
@@ -14,7 +16,6 @@ $(async()=>{
     $('#shopping-cart').on('click',()=>{completeOrder();});
 });
 const foods=[];
-
 const printFood=(food)=>{
     food.forEach(element=>{
         const html=$(`<div class='col-6' style='padding:0;'>
@@ -31,7 +32,13 @@ const printFood=(food)=>{
             </div>
         </div>
         </div>`);
-        $(html).on('click',()=>orderFood(html,element));
+        if(l===true){
+            $(html).on('click',()=>orderFood(html,element));
+        }
+        else{
+            $(html).on('click',()=>alertNotLogged());
+        }
+        
         switch (element.type_food) {
             case 'entrada':
                 $('div [id="entrada"]').append(html);
@@ -111,7 +118,9 @@ const orderFood=async(html,data)=>{
             }
         }).then( (result)=>{
             if(result.isConfirmed){
-                addToCart(num,data);
+                if(num>0){
+                    addToCart(num,data);
+                }
             }
         })
 
@@ -130,17 +139,14 @@ const addToCart=(numberFood,data)=>{
         food.uuid=data.uuid
         food.number=numberFood;
         foods.push(food);
-        console.log(foods);
     }
     else{
         const shopping=Number($('#shopping-cart').children('#number-food').text());
-        console.log(shopping+numberFood);
         const food={};
         food.name=data.name_food;
         food.uuid=data.uuid
         food.number=numberFood;
         foods.push(food);
-        console.log(foods);
         $('#shopping-cart').children('#number-food').text(shopping+numberFood);
     }
     
@@ -149,27 +155,72 @@ const addToCart=(numberFood,data)=>{
 const completeOrder=async()=>{
     let code='';
     foods.forEach(element=>{
-        code+=`<div class="col-12">
+        code+=`<div  class="col-12 info-order">
             <div class='row'>
                 <div class='col-3'>
-                    <span>X ${element.number}</span>
+                    <span>X </span><span id='number-food'>${element.number}</span>
                 </div>
                 <div class='col-6'>
-                    <span>${element.name}</span>
+                    <span id='data-food'  data='${element.uuid}'>${element.name}</span>
                 </div>
             </div>
         </div>`;
     });
-    console.log(code);
     await Swal.fire({
         title: 'Shopping Cart',
         html: `<div class='container'><div class='row'>
             ${code}
         </div>
         </div>`,
+        confirmButtonText:`<span id='btn-confirm-order'>Confirmar Pedido<span>`
     }).then( (result)=>{
         if(result.isConfirmed){
-            console.log('Aqui iria el proceso de compra');
+            const infoOrder=$('.info-order');
+            const uuidsOrder=[];
+            $(infoOrder).each((i,element)=>{
+                const foodInfo={};
+                foodInfo.number=Number($(element).find('#number-food').text());
+                foodInfo.uuid=$(element).find('#data-food').attr('data');
+                foodInfo.name=$(element).find('#data-food').text();
+                uuidsOrder.push(foodInfo);
+            });  
+            purchasingProcess(uuidsOrder);
         }
-    })
+    });
+}
+
+
+const purchasingProcess= async(uuidsOrder)=>{
+    let response=await $.ajax({
+        method:'POST',
+        datatype:'JSON',
+        data:{
+            uuidsOrder
+        },
+        url:'../backend/purchasingProcess.php'
+    });
+    console.log(response);
+    response=JSON.parse(response);
+    if(response.success===true){
+        if(response.logged===true){
+            window.location='preorder.html';
+        }
+        else{
+            
+        }
+    }else{
+
+    }
+}
+
+const alertNotLogged=()=>{
+    Swal.fire({
+        position: 'center',
+        icon: 'warning',
+        title: 'Informacion',
+        html:`<p>No puede ordenar comida, tiene que crear una cuenta o logearse con una cuenta existente para hacerlo</p> <br>
+            <a href='adduser.html'>Crear Cuenta</a><br> <a href='login.html'>Log In</a>`,
+        showConfirmButton: true
+      });
+
 }
