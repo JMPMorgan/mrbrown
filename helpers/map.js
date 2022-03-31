@@ -26,5 +26,4 @@ $(async()=>{
         },
         url:APIGEO
     });
-    console.log(response);
 });

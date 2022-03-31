@@ -20,7 +20,17 @@ $(async ()=>{
         document.location='adduser.html';
     });
 
-    $('#btn-sign-up').on('click',()=>window.location='login.html')
+    $('#btn-sign-up').on('click',()=>window.location='login.html');
+
+    $('#btn-drinks').on('click',()=>window.location='drinks.html');
+
+    $('#btn-mrbrown').on('click',()=>window.location='mr_brown.html');
+
+    $('#btn-franquicias').on('click',()=>window.location='https://www.mrbrown.mx/franquicias');
+
+    $('#btn-here').on('click',()=>window.location='franquicias.html');
+
+    $('#logo').on('click',()=>window.location='index.html');
 
 })
 

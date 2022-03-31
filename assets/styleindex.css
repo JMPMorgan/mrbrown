@@ -55,6 +55,8 @@
 }
 
 .sections:hover{
+    border-bottom: 2px solid #F5D200 ;
+    cursor: pointer;
     text-decoration:none;
     opacity: 0.75 ;
 }
@@ -64,6 +66,10 @@
 }
 #logo{
     width: 150px;
+}
+
+#logo:hover{
+    cursor: pointer;
 }
 
 .icons{

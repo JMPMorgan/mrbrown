@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Flama';
+    src: url('Fonts/Flama-Basic.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Flama';
+    src: url('Fonts/Flama-Black.otf') format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Flama';
+    src: url('Fonts/Flama.otf') format('opentype');
+    font-weight: 200;
+}
+@font-face{
+    font-family:'organetto';
+    src: local('organetto'),
+    local('organetto-regular'),
+    local('Organetto-thin'),
+    url('Fonts/organetto-regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: 'organetto';
+    src: local('organetto'),
+    local('organetto-regular'),
+    local('Organetto-thin'),
+     url('Fonts/organetto-thin.otf') format('opentype');
+    font-weight: 200;
+}
+@font-face{
+    font-family: 'organetto';
+    src: local('organetto'),
+    local('organetto-regular'),
+    local('Organetto-bold'),
+     url('Fonts/organetto-bold.otf') format('opentype');
+    font-weight: 700;
+}
+
+.title_fr{
+    font-family: 'organetto',Arial, Helvetica, sans-serif;
+}
+
+.franquicias{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 250px;
+    height: 150px;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e500c13009.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../assets/styleNavbar.css">
+    <script src="../helpers/navbar.js"></script>
+    <link rel="stylesheet" href="../assets/drinks.css">
+</head>
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mx-2 justify-content-start">
+            <div>
+              <img src="../assets/Img/logo.png" id='logo' alt="" srcset="">
+            </div>
+          </ul>
+          <ul  class="navbar-nav ">
+            <li class="navbar-items  nav-item mx-2 sections" onmouseover='this.style.borderBottom="2px solid #F5D200"'
+              onmouseleave="this.style.borderBottom='none'">
+              <span class="nav-bar-items ">OUR FOOD</spanji8>
+            </li>
+            <li id="btn-drinks" class="nav-bar-items nav-item mx-2 sections">
+              <span>DRINKS</span>
+            </li>
+            <li id="btn-here" class="nav-bar-items  nav-item mx-2 sections">
+              <span>WE ARE HERE</span>
+            </li>
+            <li id="btn-mrbrown" class="nav-bar-items nav-item mx-2 sections">
+              <span>¿QUIÉN ES MR.BROW?</span>
+            </li>
+            <li id="btn-franquicias" class="nav-bar-items  nav-item mx-2 sections">
+              <span>FRANQUICIAS</span>
+            </li>
+    
+          </ul>
+          <ul id="navbar-menu"  class="navbar-nav ml-auto justify-content-end">
+            <li class=" nav-bar-items navbar-items nav-item mx-2 sections" id="order-now" style="    padding-top: 10px;">
+              <span>ORDER NOW!</span>
+            </li>
+            <li id="btn-add-user" class="nav-item mx-2 icons"><i id="add-user" class='bx bx-user-plus'></i></li>
+            <li id="btn-sign-up" class="nav-item mx-2 icons"><i id="sign-up" class="fa-solid fa-right-to-bracket"></i></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="mx-4 mb-4 mt-2">
+          <div>
+            <h1 class="title_drink">DRINKS SIN PIQUETE</h1>
+            <div class="row">
+                <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Calpi.jpg"/>
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Ice-Mr.-Brown.jpg"/>
+                </div>
+                <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Limonada-Blue-Berry.jpg"/>
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Limonada-Frappé.jpg"/>
+                </div>
+                <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Limonada-Frutos-rojos.jpg"/>
+                    <img id="limonada-mrbrown" class="drinks" src="../assets/Img/bebidas/sin/Limonada-Mr.-Brown.jpg"/>
+                </div>
+                <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/LIMONELA-DE-LITRO.jpg"/>
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Limonela.jpg"/>
+                </div>
+                <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Malteada-MB-segunda-opción-calidad-imagen.jpg">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Manzana-Apple.jpg">
+                </div>
+                <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Ocean-Blue.jpg">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Pedrito-Coco.jpg">
+                </div>
+                <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Refrescante-de-Mango.jpg">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Rusa-Mr-Brown.jpg">
+                </div>
+                <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Single-Pie.jpg">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Tepache-MB.jpg">
+                </div>
+                <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/sin/Yaba-Guaba.jpg">
+                </div>
+              </div>
+          </div> 
+          <div class="border-top">
+              <h1 class="title_drink">DRINKS CON PIQUETE</h1>
+              <div class="row">
+                  <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Caipiriña-con-fruta.jpg" >
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Clamato-Chamoy.jpg" >
+                  </div>
+                  <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Clamato-Mezcal.jpg" >
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Clamato-Regular.jpg" >
+                  </div>
+                  <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Clamato-Tarugo.jpg" >
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Jamaiquita-Mr.-Brown.jpg" >
+                  </div>
+                  <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Jarrito-MB.jpg" >
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Margarita-Spicy.jpg" >
+                  </div>
+                  <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Margarita-triple-Berry.jpg" >
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Mezcal-Sour.jpg" >
+                  </div>
+                  <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Mezcal-Tinieblo.jpg" >
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Mojito-Especial.jpg" >
+                  </div>
+                  <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Mojito-ICE.jpg" >
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Mojito.jpg" >
+                  </div>
+                  <div class="col-3">
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Sangría-MB.jpg" >
+                    <img class="drinks" src="../assets/Img/bebidas/conp/Serrano-Mezcal.jpg" >
+                  </div>
+              </div>
+          </div>
+      </div>
+</body>
+</html>
