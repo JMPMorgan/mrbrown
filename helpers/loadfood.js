@@ -28,7 +28,8 @@ const printFood=(food)=>{
             </div>
             <div class='col-9'>
                 <h1 data='${element.uuid}'>${element.name_food}</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sodales leo. Aenean sed odio posuere.</p>
+                <p class='prices-food'>$ ${element.price_food}</p>
+                <p class='text-muted'>${element.description_food}</p>
             </div>
         </div>
         </div>`);
@@ -137,6 +138,7 @@ const addToCart=(numberFood,data)=>{
         const food={};
         food.name=data.name_food;
         food.uuid=data.uuid
+        food.price_food=data.price_food;
         food.number=numberFood;
         foods.push(food);
     }
@@ -145,6 +147,7 @@ const addToCart=(numberFood,data)=>{
         const food={};
         food.name=data.name_food;
         food.uuid=data.uuid
+        food.price_food=data.price_food;
         food.number=numberFood;
         foods.push(food);
         $('#shopping-cart').children('#number-food').text(shopping+numberFood);
@@ -155,6 +158,7 @@ const addToCart=(numberFood,data)=>{
 const completeOrder=async()=>{
     let code='';
     foods.forEach(element=>{
+        const amount_food=element.number*element.price_food;
         code+=`<div  class="col-12 info-order">
             <div class='row'>
                 <div class='col-3'>
@@ -162,6 +166,9 @@ const completeOrder=async()=>{
                 </div>
                 <div class='col-6'>
                     <span id='data-food'  data='${element.uuid}'>${element.name}</span>
+                </div>
+                <div class='col-3'>
+                   <span>$ </span><span id='price-food'>${amount_food}</span>
                 </div>
             </div>
         </div>`;
@@ -182,6 +189,7 @@ const completeOrder=async()=>{
                 foodInfo.number=Number($(element).find('#number-food').text());
                 foodInfo.uuid=$(element).find('#data-food').attr('data');
                 foodInfo.name=$(element).find('#data-food').text();
+                foodInfo.price_food=$(element).find('#price-food').text();
                 uuidsOrder.push(foodInfo);
             });  
             purchasingProcess(uuidsOrder);

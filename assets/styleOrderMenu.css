@@ -166,3 +166,22 @@
     box-shadow:  0 0 10px #F5D200 !important;
 }
 
+li>span>a{
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+li>span>a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.prices-food{
+    font-size: larger;
+    margin-top: -7%;
+    display: flex;
+    position: absolute;
+    margin-left: 80%;
+}
+

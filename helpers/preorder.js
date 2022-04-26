@@ -26,9 +26,9 @@ const putOrder=(order)=>{
     order.forEach(element => {
         const html=$(`<li class='d-flex justify-content-between'>
             <span>${element.name} X ${element.number}</span>
-            <span>$500.00</span>
+            <span>${element.price_food}</span>
         </li>`);
-        total+=500;
+        total+=Number(element.price_food);
         $('#lista-orden').append(html);
     })
     const html_total=`<li class='d-flex justify-content-end'>
