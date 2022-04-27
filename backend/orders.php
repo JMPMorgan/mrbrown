@@ -13,12 +13,15 @@ try{
                 method tambien
                 */
                 $uuid=generateRandomToken();
-                $fields['id_order']=decode($fields['id_order']);
                 $fields['method']=decode($fields['method']);
-                $sql="INSERT INTO `orders`(`id`,`lat_pedido`,`lng_pedido`,`id_info_pay`,`id_preorders_log`,`id_stores_info`,`date_creation`)
-                VALUES('{$uuid}','{$fields['lat']}','{$fields['lng']}','{$fields['method']}','{$fields['id_order']}','{$fields['sucursal']}',NOW());";
+                $sql="INSERT INTO `orders`(`id`,`lat_pedido`,`lng_pedido`,`id_info_pay`,`id_stores_info`,`date_creation`)
+                VALUES('{$uuid}','{$fields['lat']}','{$fields['lng']}','{$fields['method']}','{$fields['sucursal']}',NOW());";
                 $isInsert=execQuery($sql);
                 if($isInsert>0){
+                    foreach($fields['data_food'] as $food){
+                        $sql="INSERT INTO `food_order`(`id_food`,`id_orders`,`how_many`) VALUES('{$food['uuid']}','{$uuid}','{$food['number']}');";
+                        $isInsert=execQuery($sql);
+                    }
                     $result['success']=true;
                     $result['info']=$uuid;
                     echo json_encode($result);

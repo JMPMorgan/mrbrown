@@ -91,8 +91,8 @@ $(async ()=>{
 const putOrder=(order)=>{
     let total=0;
     order.forEach(element => {
-        const html=$(`<li class='d-flex justify-content-between'>
-            <span>${element.name} X ${element.number}</span>
+        const html=$(`<li class='d-flex justify-content-between order-food'  data='${element.uuid}'>
+            <span>${element.name} X <span id='number-food'>${element.number}</span></span>
             <span>${element.price_food}</span>
         </li>`);
         total+=Number(element.price_food);
@@ -112,9 +112,17 @@ const makeOrder=async()=>{
     const sucursal_lat=$('#sucursal option:selected').attr('data-x');
     const sucursal_lng=$('#sucursal option:selected').attr('data-y');
     const id_order=$('#order').attr('data');//
-    console.log(lat);
-    console.log(lng);
-    console.log(method);
+    const data_food=[];
+    $('#lista-orden .order-food').each((i,element)=>{
+        const food={};
+        food.uuid=$(element).attr('data');
+        food.number=$(element).find('#number-food').text();
+        /*const num_food=$(element).find('#number-food').text();
+        data_food.push( $(element).attr('data'));*/
+        data_food.push(food); 
+   });
+    console.log(data_food)
+    
     if(sucursal!=='0'){
         let response=await $.ajax({
             method:'POST',
@@ -124,7 +132,7 @@ const makeOrder=async()=>{
                 lng,
                 method,
                 sucursal,
-                id_order,
+                data_food,
                 id:1
             },
             url:'../backend/orders.php'
@@ -169,6 +177,13 @@ const makeOrder=async()=>{
     */
 }
 
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top',
+    showConfirmButton: false,
+    timer: 4500,
+    timerProgressBar: false
+  });
 
 const printErrors = (error) => {
     let html = 'Verificar información:';

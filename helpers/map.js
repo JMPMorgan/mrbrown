@@ -5,12 +5,22 @@ let query='';
 const KEYAPI='a08ab980938843789855fc7e05f161d3';
 const APIGEO=`https://api.opencagedata.com/geocode/v1/json`;
 
-let map_main,layerGroup;
+let map_main = L.map('map', {
+    layers: MQ.mapLayer(),
+    center: [25.6802019, -100.315258],
+    zoom: 13
+});
+let layerGroup;
 
 $(async()=>{
-
-    map_main = L.map('map').setView([25.6802019, -100.315258], 13);
-    addToMap(map_main);
+    map_main.remove();
+    map_main = L.map('map', {
+        layers: MQ.mapLayer(),
+        center: [25.6802019, -100.315258],
+        zoom: 13
+    });
+    
+    //addToMap(map_main);
     let response= await $.ajax({
         method:"GET",
         datatype:'JSON',
@@ -22,7 +32,6 @@ $(async()=>{
         },
         url:APIGEO
     });
-    console.log(response);
     $('#buscar-direccion').on('click',async()=>{
         const calle=$('#calle').val();
         const colonia=$('#colonia').val();
@@ -61,8 +70,12 @@ $(async()=>{
                     "info"
                 );
                 map_main.remove();
-            //L.map('map').remove();
-                map_main =L.map('map').setView([response.results[0].geometry.lat,response.results[0].geometry.lng],16);
+            map_main=L.map('map', {
+                layers: MQ.mapLayer(),
+                center: [response.results[0].geometry.lat,response.results[0].geometry.lng],
+                zoom: 16
+            });
+                //map_main =L.map('map').setView([response.results[0].geometry.lat,response.results[0].geometry.lng],16);
                 addToMap(map_main);
             }else{
                 Swal.fire(
@@ -78,40 +91,35 @@ $(async()=>{
         const lng_home=$('#confirmar-pedido').attr('data-y');
         const sucursal_lat=$('#sucursal option:selected').attr('data-x');
         const sucursal_lng=$('#sucursal option:selected').attr('data-y');
+        const dir1=`${lat_home}, ${lng_home}`;
+        const dir2=`${sucursal_lat}, ${sucursal_lng}`;
         map_main.remove();
-        //map_main = L.map('map').setView([25.6802019, -100.315258], 10);
         map_main=L.map('map', {
             layers: MQ.mapLayer(),
             center: [25.6802019, -100.315258],
             zoom: 12
         });
-        addToMap(map_main);
+        //addToMap(map_main);
         let dir = MQ.routing.directions();
-        const dir1=`${lat_home}, ${lng_home}`;
-        const dir2=`${sucursal_lat}, ${sucursal_lng}`;
-        console.log(dir.route);
-        console.log(dir);
+
         dir.route({
             locations:[
-                {latlng:{lat:lat_home,lng:lng_home}},
-                {latlng:{lat:sucursal_lat,lng:sucursal_lng}}
+                dir1,
+                dir2
             ]
-        });
-        console.log(dir.route);
-        
+        });   
         CustomRouteLayer = MQ.Routing.RouteLayer.extend({
             createStartMarker: (location) => {
                 let custom_icon;
                 let marker;
 
                 custom_icon = L.icon({
-                    iconUrl: '../assets/img/red_maker.png',
+                    iconUrl: '../assets/Img/red_maker.png',
                     iconSize: [20, 29],
                     iconAnchor: [10, 29],
                     popupAnchor: [0, -29]
                 });
-
-                marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map);
+                marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map_main);
 
                 return marker;
             },
@@ -121,13 +129,12 @@ $(async()=>{
                 let marker;
 
                 custom_icon = L.icon({
-                    iconUrl: '../assets/img/red_maker.png',
+                    iconUrl: '../assets/Img/red_maker.png',
                     iconSize: [20, 29],
                     iconAnchor: [10, 29],
                     popupAnchor: [0, -29]
                 });
-
-                marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map);
+                marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map_main);
 
                 return marker;
             }
@@ -137,10 +144,6 @@ $(async()=>{
             directions: dir,
             fitBounds: true
         })); 
-        /*map_main.addLayer(MQ.routing.routeLayer({
-            directions:dir,
-            fitBounds:true
-        }));*/
     });
 });
 
@@ -165,14 +168,14 @@ const searchDirection=async(query)=>{
 
 const addToMap=(map)=>{
 
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', 
+    /*L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', 
     {
         maxZoom: 18,
         id: 'mapbox/streets-v11',
         tileSize: 512,
         zoomOffset: -1,
         accessToken: mapboxAccessToken
-    }).addTo(map);
+    }).addTo(map);*/
     layerGroup=L.layerGroup().addTo(map);
     map.on('click',(event)=>{
         layerGroup.clearLayers();
