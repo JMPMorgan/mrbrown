@@ -73,6 +73,75 @@ $(async()=>{
             }
         }
     });
+    $('#btn-oculto').on('click',()=>{
+        const lat_home=$('#confirmar-pedido').attr('data-x');
+        const lng_home=$('#confirmar-pedido').attr('data-y');
+        const sucursal_lat=$('#sucursal option:selected').attr('data-x');
+        const sucursal_lng=$('#sucursal option:selected').attr('data-y');
+        map_main.remove();
+        //map_main = L.map('map').setView([25.6802019, -100.315258], 10);
+        map_main=L.map('map', {
+            layers: MQ.mapLayer(),
+            center: [25.6802019, -100.315258],
+            zoom: 12
+        });
+        addToMap(map_main);
+        let dir = MQ.routing.directions();
+        const dir1=`${lat_home}, ${lng_home}`;
+        const dir2=`${sucursal_lat}, ${sucursal_lng}`;
+        console.log(dir.route);
+        console.log(dir);
+        dir.route({
+            locations:[
+                {latlng:{lat:lat_home,lng:lng_home}},
+                {latlng:{lat:sucursal_lat,lng:sucursal_lng}}
+            ]
+        });
+        console.log(dir.route);
+        
+        CustomRouteLayer = MQ.Routing.RouteLayer.extend({
+            createStartMarker: (location) => {
+                let custom_icon;
+                let marker;
+
+                custom_icon = L.icon({
+                    iconUrl: '../assets/img/red_maker.png',
+                    iconSize: [20, 29],
+                    iconAnchor: [10, 29],
+                    popupAnchor: [0, -29]
+                });
+
+                marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map);
+
+                return marker;
+            },
+
+            createEndMarker: (location) => {
+                let custom_icon;
+                let marker;
+
+                custom_icon = L.icon({
+                    iconUrl: '../assets/img/red_maker.png',
+                    iconSize: [20, 29],
+                    iconAnchor: [10, 29],
+                    popupAnchor: [0, -29]
+                });
+
+                marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map);
+
+                return marker;
+            }
+        });
+        
+        map_main.addLayer(new CustomRouteLayer({
+            directions: dir,
+            fitBounds: true
+        })); 
+        /*map_main.addLayer(MQ.routing.routeLayer({
+            directions:dir,
+            fitBounds:true
+        }));*/
+    });
 });
 
 
@@ -112,5 +181,8 @@ const addToMap=(map)=>{
         const lng= event.latlng.lng;
         const marker = L.marker([lat,lng]).addTo(map);
         marker.addTo(layerGroup);
+        marker.bindPopup("Lugar de pedido").openPopup();
+        $('#confirmar-pedido').attr('data-x',lat);
+        $('#confirmar-pedido').attr('data-y',lng);
     });
 }

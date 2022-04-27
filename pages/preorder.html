@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="../assets/styleNavbar.css">
     <script src="../helpers/navbar.js"></script>
     <link rel="stylesheet" href="../assets/stylePreorder.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=reorE5DyACa9MwEVNg0N1lfe49ShBRiy"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=yMbLJLZz6vI2T4IsWejViVFjmlh4ARQQ"></script>
     <script src="../helpers/preorder.js"></script>
     
 </head>
@@ -99,9 +102,9 @@
   
                     </ul>
                   </div>
-                  <div class="col-12">
+                  <div class="col-12" id="payment-info">
                     <h3>Metodo de pago</h3>
-                      <div>
+                      <!--<div>
                         <input type="radio" name="metodo" id="metodo1" >
                         <label for="metodo1" >**** **** **** 5529</label>
                       </div>
@@ -112,10 +115,17 @@
                       <div>
                         <input type="radio" name="metodo" id="metodo3">
                         <label for="metodo3" >**** **** **** 5527</label>
-                      </div>
+                      </div>-->
+                  </div>
+                  <div class="col-12">
+                    <h3 >Sucursal</h3>
+                    <select class="form-control" name="" id="sucursal">
+                      <option class="text-muted" value="0">Eliga una sucursal....</option>
+                    </select>
                   </div>
                   <div class="col-12 d-flex justify-content-end mt-2">
                     <button id="confirmar-pedido" class="btn-direccion btn btn-primary">Confirmar Pedido</button>
+                    <button id="btn-oculto" style="display: none;"></button>
                   </div>
                 </div>
               </div>  
