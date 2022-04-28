@@ -4,12 +4,13 @@ require_once('../backend/Auxiliar/auxiliarMethods.php');
 $result=array('info'=>array());
 try{
     if(isSessionCorrect()==true){
+        $result['logged']=true;
         $uuid_session=session_id();
         $uuids=explode('-',$uuid_session);
-        $sql="SELECT `name_user`,`lastname_user`,`nick_user`,`email_user`,`phone_user` 
-                    FROM `users` WHERE `uuid`='{$uuids[1]}';";
+        $sql="SELECT * FROM `users` WHERE `uuid`='{$uuids[1]}';";
         $rows=selectQuery($sql);
         if(!empty($rows)){
+            $rows[0]['password_user']=decode($rows[0]['password_user']);
             $result['info']=$rows[0];
             $result['success']=true;
         }
@@ -19,6 +20,7 @@ try{
         }
     }
     else{
+        $result['logged']=false;
         $result['error'][]='No se pudo obtener la sesion del usuario, por favor recargue e intente de nuevo';
         $result['success']=false;
     }
