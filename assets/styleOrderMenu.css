@@ -184,4 +184,15 @@ li>span>a:hover{
     position: absolute;
     margin-left: 80%;
 }
+ 
+
+.btn-delete-order{
+    margin-left: 5px;
+    display: none;
+}
+
+#order-row-container:hover>.row>.col-3>.btn-delete-order{
+    display: inline-grid;
+}
+
 

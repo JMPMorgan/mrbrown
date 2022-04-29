@@ -157,21 +157,26 @@ const addToCart=(numberFood,data)=>{
 
 const completeOrder=async()=>{
     let code='';
+    let contador=0;
     foods.forEach(element=>{
         const amount_food=element.number*element.price_food;
-        code+=`<div  class="col-12 info-order">
-            <div class='row'>
-                <div class='col-3'>
-                    <span>X </span><span id='number-food'>${element.number}</span>
-                </div>
-                <div class='col-6'>
-                    <span id='data-food'  data='${element.uuid}'>${element.name}</span>
-                </div>
-                <div class='col-3'>
-                   <span>$ </span><span id='price-food'>${amount_food}</span>
-                </div>
+        const dish=`<div  class="col-12 info-order my-1" id='order-row-container'>
+        <div class='row' >
+            <div class='col-3'>
+               
+                <span>X </span><span id='number-food'>${element.number}</span>
             </div>
-        </div>`;
+            <div class='col-6'>
+                <span id='data-food'  data='${element.uuid}'>${element.name}</span>
+            </div>
+            <div class='col-3' style='padding:0;'>
+               <span>$ </span><span id='price-food'>${amount_food}</span>
+               <button class='btn btn-sm btn-outline-danger btn-delete-order' onclick='deleteDish("${element.uuid}",${contador})'><i class='bx bxs-trash'></i></button>
+            </div>
+        </div>
+    </div>`;
+        code+=dish;
+        contador++;
     });
     await Swal.fire({
         title: 'Shopping Cart',
@@ -195,6 +200,17 @@ const completeOrder=async()=>{
             purchasingProcess(uuidsOrder);
         }
     });
+}
+
+const deleteDish=(uuid,contador)=>{
+    console.log(uuid);
+    console.log(contador);
+    console.log($('.info-order'));
+    const dish=$('.info-order')[contador];
+    $(dish).remove();
+    if(contador===0){
+        window.location.reload();
+    }
 }
 
 
