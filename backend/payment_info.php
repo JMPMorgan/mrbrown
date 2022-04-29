@@ -9,7 +9,7 @@ try{
             if(isSessionCorrect()==true){
                 $result['logged']=true;
                 $uuids = explode('-', session_id());
-                $sql="SELECT `id`,`card` FROM `info_pay` WHERE `uuid_name`='{$uuids[1]}';";
+                $sql="SELECT `id`,`card` FROM `info_pay` WHERE `uuid_name`='{$uuids[1]}' AND `activo`=0;";
                 $rows=selectQuery($sql);
                 if(!empty($rows)){
                     $count_rows=count($rows);
@@ -78,6 +78,56 @@ try{
                 exit;
             }
         }break;
+        case 3:{
+            if(isSessionCorrect()==true){
+                $result['logged']=true;
+                $uuids=explode('-',session_id());
+                $sql="SELECT `id`,`card`,DATE_FORMAT(`expiration_date`,'%m/%Y') as `expiration_date` FROM `info_pay`
+                WHERE `uuid_name`='{$uuids[1]}' AND `activo`=0;";
+                $rows=selectQuery($sql);
+                if(!empty($rows)){
+                    $count_rows=count($rows);
+                    for ($i=0; $i < $count_rows ; $i++) { 
+                        $rows[$i]['card']=decode($rows[$i]['card']);
+                        $rows[$i]['card']=substr($rows[$i]['card'],-4);
+                    }
+                    $result['success']=true;
+                    $result['info']=$rows;
+                }else{
+                    $result['success']=false;
+                    $result['error'][]='No se ha insertado ninguna forma de pago';
+                }
+                echo json_encode($result);
+                exit;
+            }else{
+                $result['success']=false;
+                $result['logged']=false;
+                echo json_encode($result);
+                exit;
+            }
+        }break;
+        case 4:{
+            if(isSessionCorrect()==true){
+                $result['logged']=true;
+                $uuids=explode('-',session_id());
+                $sql="UPDATE `info_pay` set `activo`=1 WHERE `id`='{$fields['uuid']}';";
+                $isDelete=execQuery($sql);
+                if($isDelete>0){
+                    $result['success']=true;
+                }else{
+                    $result['success']=false;
+                    $result['error'][]='No se pudo borrar la informacion de pago';
+                }
+                echo json_encode($result);
+                exit;
+            }
+            else{
+                $result['success']=false;
+                $result['logged']=false;
+                echo json_encode($result);
+                exit;
+            }
+        }
         default:
             # code...
             break;

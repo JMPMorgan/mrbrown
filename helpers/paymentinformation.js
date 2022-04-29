@@ -6,7 +6,33 @@ const Toast = Swal.mixin({
     timerProgressBar: false
   });
 
-$(()=>{
+$(async ()=>{
+    let response= await $.ajax({
+        method:'GET',
+        datatype:'JSON',
+        data:{
+            id:3
+        },
+        url:'../backend/payment_info.php'
+    });
+    response=JSON.parse(response);
+    if(response.success===true){   
+        response.info.forEach(element => {
+            const html=`<div class='my-2' id='control-pago'>
+                            <button class='btn btn-sm rounded btn-delete btn-outline-danger' onclick='deletePayment(${element.id})'><i class='bx bxs-trash'></i></button>
+                            <p id='pm-user'>Fecha de Expiracion: <span>${element.expiration_date}</span></p>
+                            <span class='font-weight-bold' id='pm-name'>**** **** **** ${element.card}</span>
+                        </div>`;
+            $('#container-info').append(html);
+        });
+    }else{
+        if(response.logged===false){
+
+        }else{
+            printErrors(response.error);
+        }
+    }
+
     /*console.log(window.parent);
     console.log(window.parent.parent);*/
     const check=window.parent.parent.document.querySelector('#check-iframe');
@@ -63,6 +89,8 @@ $(()=>{
                     if(query==='pago'){//Esto se pregunta ya que  puede referirse desde esta pagina y para regresar
                         window.parent.parent.location='preorder.html';
                     }
+                }else{
+                    window.location.reload();
                 }
             }else{
                 if(response.logged===true){
@@ -93,6 +121,26 @@ const printErrors = (error) => {
 const checkOnlyNumbers=(str)=>{
     const regex_number = /^[0-9]+$/;
     return regex_number.test(str);
+}
+
+
+const deletePayment=async(id)=>{
+    console.log(id)
+ let response=await $.ajax({
+     method:'POST',
+     datatype:'JSON',
+     data:{
+        id:4,
+        uuid:id
+     },
+     url:'../backend/payment_info.php'
+ });
+ response=JSON.parse(response);
+ if(response.success===true){
+    window.location.reload();
+ }else{
+
+ }
 }
 
 function getParameterByName(str) {

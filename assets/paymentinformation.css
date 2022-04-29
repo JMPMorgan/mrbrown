@@ -45,3 +45,25 @@
     border-color: #F5D200;
     color: #000000;
 }
+
+#pm-user{
+    margin: 0;
+}
+
+.btn-delete{
+    display: none;
+    position: absolute;
+    margin-left: 215px;
+    margin-top: 25px;
+}
+
+#control-pago:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#control-pago:hover>.btn-delete{
+    display: flex;
+    position: absolute;
+    margin-left: 215px;
+    margin-top: 25px;
+}
