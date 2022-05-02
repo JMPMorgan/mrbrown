@@ -9,71 +9,12 @@
     <script src="https://kit.fontawesome.com/e500c13009.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../assets/pedidos.css">
     <script src="../helpers/pedidos.js"></script>
 </head>
 <body>
-    <style>
-        body{
-            overflow-x: hidden;
-        }
-    </style>
+    <div class="loader--hiden" id="loader"></div>  
     <div class="row" id="all-pedidos">
-        <!--<div class="col-12 border-bottom">
-            <p class="text-muted h4">NUMERO DE ORDER: #<span id="n-order">0000001</span></p>
-            <ul id="lista-orden"> 
-                <li class="d-flex justify-content-between"><span>COMIDA 1 X 30</span><span>$30.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 2 X 10</span><span>$10.00</span></li>
-                <li class="d-flex justify-content-end border-top"><span>TOTAL: $40.00</span></li>
-            <ul>
-        </div>
-        <div class="col-12 border-bottom">
-            <p class="text-muted h4">NUMERO DE ORDER: #<span id="n-order">0000002</span></p>
-            <ul id="lista-orden"> 
-                <li class="d-flex justify-content-between"><span>COMIDA 1 X 30</span><span>$30.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 2 X 10</span><span>$10.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 3 X 30</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 4 X 10</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 5 X 30</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 6 X 10</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-end border-top"><span>TOTAL: $200.00</span></li>
-            <ul>
-        </div>
-        <div class="col-12 border-bottom">
-            <p class="text-muted h4">NUMERO DE ORDER: #<span id="n-order">0000003</span></p>
-            <ul id="lista-orden"> 
-                <li class="d-flex justify-content-between"><span>COMIDA 1 X 30</span><span>$30.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 2 X 10</span><span>$10.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 3 X 30</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 4 X 10</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 5 X 30</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 6 X 10</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-end border-top"><span>TOTAL: $200.00</span></li>
-            <ul>
-        </div>
-        <div class="col-12 border-bottom">
-            <p class="text-muted h4">NUMERO DE ORDER: #<span id="n-order">0000003</span></p>
-            <ul id="lista-orden"> 
-                <li class="d-flex justify-content-between"><span>COMIDA 1 X 30</span><span>$30.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 2 X 10</span><span>$10.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 3 X 30</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 4 X 10</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 5 X 30</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 6 X 10</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-end border-top"><span>TOTAL: $200.00</span></li>
-            <ul>
-        </div>
-        <div class="col-12 border-bottom">
-            <p class="text-muted h4">NUMERO DE ORDER: #<span id="n-order">0000003</span></p>
-            <ul id="lista-orden"> 
-                <li class="d-flex justify-content-between"><span>COMIDA 1 X 30</span><span>$30.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 2 X 10</span><span>$10.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 3 X 30</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 4 X 10</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 5 X 30</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-between"><span>COMIDA 6 X 10</span><span>$40.00</span></li>
-                <li class="d-flex justify-content-end border-top"><span>TOTAL: $200.00</span></li>
-            <ul>
-        </div>-->
     </div>
 </body>
 </html>

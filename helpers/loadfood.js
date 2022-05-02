@@ -1,5 +1,32 @@
+import {getParameterByName} from '../helpers/auxiliar/auxiliarMethods.js';
+
 let l=false;
 $(async()=>{
+    const query=getParameterByName('query');
+    console.log(query);
+    if(query==='back'){
+        let response=await $.ajax({
+            method:'GET',
+            datatype:'JSON',
+            url:'../backend/loadpreorder.php'
+        });
+        console.log(response);
+        response=JSON.parse(response);
+        console.log(response);
+        if(response.success===true){
+            const uuids=response.info.preorder;
+            console.log(uuids);
+            uuids.forEach(element=>{
+                const data={
+                    name_food:element.name,
+                    uuid:element.uuid,
+                    price_food:Number(element.price_food_normally)
+                }
+                const number=Number(element.number);
+                addToCart(number,data);
+            });
+        }
+    }
     let response = await $.ajax({
         method:'GET',
         datatype:'JSON',
@@ -136,28 +163,36 @@ const addToCart=(numberFood,data)=>{
         $('#shopping-cart').attr('data',true);
         $('#shopping-cart').append(html);
         const food={};
-        food.name=data.name_food;
-        food.uuid=data.uuid
-        food.price_food=data.price_food;
-        food.number=numberFood;
-        foods.push(food);
+        const checkOrder=checkInfoOrder(data.uuid,numberFood);
+        if(checkOrder===false){
+            food.name=data.name_food;
+            food.uuid=data.uuid
+            food.price_food=data.price_food;
+            food.number=numberFood;
+            foods.push(food);
+        }
     }
     else{
         const shopping=Number($('#shopping-cart').children('#number-food').text());
         const food={};
-        food.name=data.name_food;
-        food.uuid=data.uuid
-        food.price_food=data.price_food;
-        food.number=numberFood;
-        foods.push(food);
+        const checkOrder=checkInfoOrder(data.uuid,numberFood);
+        if(checkOrder===false){
+            food.name=data.name_food;
+            food.uuid=data.uuid
+            food.price_food=data.price_food;
+            food.number=numberFood;
+            foods.push(food);
+        }
         $('#shopping-cart').children('#number-food').text(shopping+numberFood);
     }
+    console.log(foods);
     
 }
 
 const completeOrder=async()=>{
     let code='';
     let contador=0;
+    console.log(foods);
     foods.forEach(element=>{
         const amount_food=element.number*element.price_food;
         const dish=`<div  class="col-12 info-order my-1" id='order-row-container'>
@@ -247,4 +282,16 @@ const alertNotLogged=()=>{
         showConfirmButton: true
       });
 
+}
+
+const checkInfoOrder=(uuid,number)=>{// Es para ver si esta ordenando algun platillo ya añadido
+ let check=false;
+    foods.forEach(element=>{
+     console.log(element)
+        if(element.uuid===uuid){
+            element.number+=number;
+            check= true; 
+        }
+    });
+    return check;
 }
